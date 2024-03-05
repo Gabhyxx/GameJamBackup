@@ -26,17 +26,22 @@ public class StampScript : MonoBehaviour
 
     public void ExecuteAnimation()
     {
-        anim.SetBool("StampAnimation", true);
-        isUnfolded = true;
-    }
-
-    public void CloseStamp()
-    {
-        if (isUnfolded == true) 
+        if (isUnfolded == true)
         {
             anim.SetBool("CloseStampAnimation", true);
             anim.SetBool("StampAnimation", false);
             isUnfolded = false;
         }
+        else {
+            anim.SetBool("StampAnimation", true);
+            anim.SetBool("CloseStampAnimation", false);
+            isUnfolded = true;
+        }
+        
+    }
+
+    public void CloseStamp()
+    {
+        
     }
 }
