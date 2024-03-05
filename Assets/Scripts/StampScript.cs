@@ -5,6 +5,7 @@ using UnityEngine;
 public class StampScript : MonoBehaviour
 {
     private Animator anim;
+    private bool isUnfolded;
     //private Vector2 stampMovePosition;
     //
 
@@ -26,7 +27,16 @@ public class StampScript : MonoBehaviour
     public void ExecuteAnimation()
     {
         anim.SetBool("StampAnimation", true);
+        isUnfolded = true;
     }
 
-    public void OnClick()
+    public void CloseStamp()
+    {
+        if (isUnfolded == true) 
+        {
+            anim.SetBool("CloseStampAnimation", true);
+            anim.SetBool("StampAnimation", false);
+            isUnfolded = false;
+        }
+    }
 }
