@@ -55,7 +55,7 @@ public class CharNameGenerator : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-         audioSource.clip = music;
+        audioSource.clip = music;
         audioSource.Play();
         for (int i = 0; i < firstNames.Count; i++)
         {
