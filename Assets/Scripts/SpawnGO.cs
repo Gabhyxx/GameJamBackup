@@ -21,14 +21,15 @@ public class SpawnGO : MonoBehaviour
 
     private void Start()
     {
-
+        InvokeRepeating("SpawnDocuments", secondsToWait, secondsToWait);
         documentCount = GameObject.FindGameObjectsWithTag("Documents").Length;
     }
 
     private void Update()
     {
+
         CountingDocuments();
-        SpawnDocuments();
+        //SpawnDocuments();
     }
 
     private void CountingDocuments()
@@ -45,7 +46,8 @@ public class SpawnGO : MonoBehaviour
     {
         if (documentCount == 0)
         {
-            Invoke("InstantiateDocument", secondsToWait);
+            //Invoke("InstantiateDocument", secondsToWait);
+            InstantiateDocument();
         }
     }
 
