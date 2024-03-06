@@ -5,9 +5,15 @@ using UnityEngine;
 public class DragDrop : MonoBehaviour
 {
     Vector3 mousePositionOffset;
+    Rigidbody2D rb2d;
 
     bool limitContact;
-    
+
+
+    private void Awake()
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+    }
 
     private Vector3 GetMouseWorldPossition()
     {
@@ -41,6 +47,23 @@ public class DragDrop : MonoBehaviour
             limitContact = true;
             //moveObject = collision.gameObject.GetComponent<InteractuableLimit>().relocate;
             //transform.position = transform.position + moveObject;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "DropZone")
+        {
+            rb2d.gravityScale = 1;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "DropZone")
+        {
+            rb2d.gravityScale = 0;
+            Destroy(gameObject);
         }
     }
 }
