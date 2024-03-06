@@ -27,8 +27,7 @@ public class SpawnGO : MonoBehaviour
 
     private void Update()
     {
-
-        CountingDocuments(); 
+        CountingDocuments();
     }
 
     private void CountingDocuments()

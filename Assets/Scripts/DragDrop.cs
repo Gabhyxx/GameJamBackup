@@ -23,7 +23,6 @@ public class DragDrop : MonoBehaviour
     private void OnMouseDown()
     {
         mousePositionOffset = gameObject.transform.position - GetMouseWorldPossition();
-        
     }
 
     private void OnMouseUp()
@@ -45,25 +44,11 @@ public class DragDrop : MonoBehaviour
         if(collision.gameObject.tag == "Limit")
         {
             limitContact = true;
-            //moveObject = collision.gameObject.GetComponent<InteractuableLimit>().relocate;
-            //transform.position = transform.position + moveObject;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "DropZone")
-        {
-            rb2d.gravityScale = 1;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "DropZone")
-        {
-            rb2d.gravityScale = 0;
-            Destroy(gameObject);
-        }
+       Destroy(gameObject);
     }
 }
