@@ -17,7 +17,6 @@ public class SpawnGO : MonoBehaviour
     private void Awake()
     {
         spawnPosition = gameObject.transform.position;
-        document = Instantiate(document, spawnPosition, quaternion.identity);
     }
 
     private void Start()
@@ -46,7 +45,12 @@ public class SpawnGO : MonoBehaviour
     {
         if (documentCount == 0)
         {
-            Invoke("document", secondsToWait);
+            Invoke("InstantiateDocument", secondsToWait);
         }
+    }
+
+    void InstantiateDocument()
+    {
+        Instantiate(document, spawnPosition, quaternion.identity);
     }
 }
