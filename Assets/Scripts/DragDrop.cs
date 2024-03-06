@@ -6,13 +6,20 @@ public class DragDrop : MonoBehaviour
 {
     Vector3 mousePositionOffset;
     Rigidbody2D rb2d;
+    StampDoc stampDoc;
 
     bool limitContact;
-
+    bool stamped;
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        stampDoc = gameObject.GetComponent<StampDoc>();
+    }
+
+    private void Start()
+    {
+        stamped = stampDoc.isStamped;
     }
 
     private Vector3 GetMouseWorldPossition()
@@ -49,6 +56,6 @@ public class DragDrop : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-       Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

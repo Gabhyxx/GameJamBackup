@@ -60,25 +60,9 @@ public class CharNameGenerator : MonoBehaviour
         }
     }
 
-    //public void Generate()
-    //{
-    //    string firstName = PickRandomFromList(firstNames) + " ";
-    //    string lastName = PickRandomFromList(lastNames);
-    //    string crime = PickRandomFromList(crimes);
-    //    string description = PickRandomFromList(description1);
-    //    string descriptionBis = PickRandomFromList(description2);
-    //    string descriptionBisBis = PickRandomFromList(description3);
-    //}
-
-    //string PickRandomFromList(List<string> list)
-    //{
-    //    int index = Mathf.RoundToInt(Random.Range(0, list.Count));
-    //    return list[index];
-    //}
-
     void IndexGenerator()
     {
         index = Random.Range(0, firstNames.Count);
-        Debug.Log("Indice generado: " + index);                                     
+        //Debug.Log("Indice generado: " + index);                                     
     }
 }

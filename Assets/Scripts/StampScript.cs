@@ -39,9 +39,4 @@ public class StampScript : MonoBehaviour
         }
         
     }
-
-    public void CloseStamp()
-    {
-        
-    }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpawnGO : MonoBehaviour
 {
     [SerializeField] private GameObject document;
+    [SerializeField] private GameObject[] character, charPicture;
 
     [SerializeField] private int frameInterval;
     [SerializeField] private float secondsToWait;
@@ -36,7 +37,7 @@ public class SpawnGO : MonoBehaviour
 
         for (int i = 0; i <= documentCount; i++)
         {
-            Debug.Log("Número de documentos: " + documentCount);
+            //Debug.Log("Número de documentos: " + documentCount);
         }
     }
 
@@ -46,5 +47,10 @@ public class SpawnGO : MonoBehaviour
         {
             Instantiate(document, spawnPosition, quaternion.identity);
         }
+    }
+
+    private void PickCharacter()
+    {
+        int index = UnityEngine.Random.Range(0, character.Length);
     }
 }
