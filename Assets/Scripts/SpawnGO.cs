@@ -28,8 +28,7 @@ public class SpawnGO : MonoBehaviour
     private void Update()
     {
 
-        CountingDocuments();
-        //SpawnDocuments();
+        CountingDocuments(); 
     }
 
     private void CountingDocuments()
@@ -46,13 +45,7 @@ public class SpawnGO : MonoBehaviour
     {
         if (documentCount == 0)
         {
-            //Invoke("InstantiateDocument", secondsToWait);
-            InstantiateDocument();
+            Instantiate(document, spawnPosition, quaternion.identity);
         }
-    }
-
-    void InstantiateDocument()
-    {
-        Instantiate(document, spawnPosition, quaternion.identity);
     }
 }
