@@ -588,8 +588,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CR\xC9DITOS\n\n\nARTE: LAURA MIRANDA\n\n\nDISE\xD1O: FRANCISCO SALVADOR
-    LARA GARC\xCDA\n\n\nPROGRAMACI\xD3N: JOS\xC9 GABRIEL PE\xD1A GARC\xCDA\n\n\nSONIDO:
+  m_text: "CR\xC9DITOS\n\n\nARTE: LAURA MIRANDA PANIAGUA\n\n\nDISE\xD1O: FRANCISCO
+    SALVADOR LARA GARC\xCDA\n\n\nPROGRAMACI\xD3N: JOS\xC9 GABRIEL PE\xD1A GARC\xCDA\n\n\nSONIDO:
     CARLOS ADRI\xC1N  D\xCDAZ PRADOS"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d947dc5458692145a40609c0d430051, type: 2}
@@ -1006,9 +1006,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "La jornada de trabajo ha terminado, el L\xCDDER est\xE1 encantado con
     tu labor. Como recompensa, ma\xF1ana tendr\xE1s una jornada laboral de 12 horas.
-    Recuerda que la jornada laboral es un obsequio de nuestra NACI\xD3N, nos mantiene
-    unidos y ayuda a que el L\xCDDER reponga energ\xEDa que le ayude a planificar
-    una estrategia para vencer al ENEMIGO."
+    Recuerda que la jornada laboral es un obsequio de nuestra NACI\xD3N, y se\xF1al
+    de respeto hacia nuestro MARISCAL."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d947dc5458692145a40609c0d430051, type: 2}
   m_sharedMaterial: {fileID: 2605483285018701912, guid: 3d947dc5458692145a40609c0d430051, type: 2}
