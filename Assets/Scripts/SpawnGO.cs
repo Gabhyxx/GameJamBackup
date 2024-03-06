@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnGO : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class SpawnGO : MonoBehaviour
 
     [SerializeField] private int frameInterval;
     [SerializeField] private float secondsToWait;
+    
 
     private Vector3 spawnPosition;
 
     private int documentCount;
+    int cont;
 
     private void Awake()
     {
@@ -37,7 +40,7 @@ public class SpawnGO : MonoBehaviour
 
         for (int i = 0; i <= documentCount; i++)
         {
-            //Debug.Log("Número de documentos: " + documentCount);
+            //Debug.Log("Nï¿½mero de documentos: " + documentCount);
         }
     }
 
@@ -46,7 +49,16 @@ public class SpawnGO : MonoBehaviour
         if (documentCount == 0)
         {
             Instantiate(document, spawnPosition, quaternion.identity);
+            cont++;
+            if(cont == 5){
+               StartCoroutine(WaitForSceneLoad());
+            }
         }
+    }
+
+     private IEnumerator WaitForSceneLoad() {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(2); 
     }
 
     private void PickCharacter()

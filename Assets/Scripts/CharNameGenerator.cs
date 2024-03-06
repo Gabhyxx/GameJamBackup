@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CharNameGenerator : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class CharNameGenerator : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameDescription1;
     [SerializeField] private TextMeshProUGUI nameDescription2;
     [SerializeField] private TextMeshProUGUI nameDescription3;
+    [SerializeField] Image character;
+    [SerializeField] GameObject[] characterDocument;
+    [SerializeField] Sprite [] sprites;
+    [SerializeField] Image face;
+    private AudioSource audioSource;
+    [SerializeField] AudioClip music;
 
 
     int index;
@@ -20,9 +27,9 @@ public class CharNameGenerator : MonoBehaviour
         "Giovanni", "Orville", "Su-yeol", "Francisco", "Pickle", "Hammer"
     };
 
-    List<string> lastNames = new List<string> 
+    List<string> lastNames = new List<string>
     {
-        "Sweetie", "Cheesecake", "Christopher", "García Ponce", "Toffee", "Sampson"
+        "Sweetie", "Cheesecake", "Christopher", "GarcÃ­a Ponce", "Toffee", "Sampson"
     };
 
     List<string> crimes = new List<string>
@@ -47,6 +54,9 @@ public class CharNameGenerator : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+         audioSource.clip = music;
+        audioSource.Play();
         for (int i = 0; i < firstNames.Count; i++)
         {
            IndexGenerator();
@@ -57,7 +67,14 @@ public class CharNameGenerator : MonoBehaviour
             nameDescription1.text = description1[index];
             nameDescription2.text = description2[index];
             nameDescription3.text = description3[index];
+            face.sprite = sprites[varia/2];
+            character.sprite = sprites[varia/2];
         }
+    }
+
+    void CharacterSelector()
+    {
+        
     }
 
     void IndexGenerator()

@@ -13,15 +13,14 @@ public class StampDoc : MonoBehaviour
         isGreen = false;
         isRed = false;
         isStamped = false;
-        Debug.Log("Estampado: " + isStamped);
+        
     }
     public void PrintGreenStamp()
     {
         isStamped = true;
         isGreen = true;
         isRed = false;
-        Debug.Log("Verde: " + isGreen);
-        Debug.Log("Rojo: " + isRed);
+       
         
     }
 
@@ -30,8 +29,6 @@ public class StampDoc : MonoBehaviour
         isStamped = true;
         isGreen = false;
         isRed = true;
-        Debug.Log("Verde: " + isGreen);
-        Debug.Log("Rojo: " + isRed);
-        Debug.Log("Estampado: " + isStamped);
+       
     }
 }

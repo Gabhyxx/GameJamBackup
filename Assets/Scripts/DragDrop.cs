@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DragDrop : MonoBehaviour
@@ -10,6 +11,8 @@ public class DragDrop : MonoBehaviour
 
     bool limitContact;
     bool stamped;
+    private AudioSource audioSource;
+    [SerializeField] AudioClip music;
 
     private void Awake()
     {
@@ -20,6 +23,8 @@ public class DragDrop : MonoBehaviour
     private void Start()
     {
         stamped = stampDoc.isStamped;
+        audioSource = GetComponent<AudioSource>();
+        
     }
 
     private Vector3 GetMouseWorldPossition()
@@ -57,5 +62,9 @@ public class DragDrop : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         Destroy(gameObject);
+        audioSource.clip = music;
+        audioSource.Play();
+    
+        
     }
 }
